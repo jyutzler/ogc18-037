@@ -1,24 +1,21 @@
 == Summary
-(( A The following is, as all texts in double square brackets, a helper text. Please remove this and all other helper texts once done. ))
+This discussion paper presents an approach to harmonize GeoPackage and OWS Context. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information. OWS Context is an open format linking geospatial web services and information.
 
-(( The Summary clause shall define without ambiguity the subject of this document and the aspect(s) covered. It shall be succinct so that it can be used as a text for bibliographic purposes. Briefly, it shall contain the key results of the work described in the ER. ))
-
-(( The summary shall further contain a business value statement that should describe the value of this Engineering Report to improve interoperability, advance location-based technologies or realize innovations. ))
-
-(( The summary shall contain the key findings in a concise form. A more detailed description of the findings should be in the body of the report. ))
-
-(( This section shall be between 2-3 paragraphs and not longer than 507 words.))
+This document is the work of collaboration between the GeoPackage and OWS Context Standards Working Groups (SWGs).
 
 === Requirements & Research Motivation
-(( A precise descriptions of the requirements that have been addressed by the work documented in this Engineering Report; together with the research motivation that answers the fundamental question: What motivated us to address this topic in this report? ))
+GeoPackage and OWS Context are two OGC encoding standards that have potentially complementary and overlapping uses. There are two use cases that the submitters of this discussion paper would like to see supported in a standards-based way:
+
+1. Encoding of OWS Context content within a GeoPackage, so that a GeoPackage can load a list of OWS Contexts, present them to the user, and allow the user to select the one which most closely matches their desired activity. This would allow the OWS Context to act as a standards-based project file for GeoPackage.
+2. Encoding of GeoPackage content within an OWS Context file, so that an OWS Context can refer to GeoPackage content in the same way it can refer to services, files (e.g., GML), and inline content. This would increase the utility of OWS Context because GeoPackage is becoming an increasingly common container for geospatial data and information.
 
 === Prior-After Comparison
-(( This section shall provide a prior-after comparison. It describes the situation/status of discussion in the OGC working groups being most relevant for the addressed topic. This part is reviewed in close detail by the appropriate SWG/DWG to ensure that the latest developments have been considered. The section will be complemented at the end of the initiative by comparing the results documented in the ER with the original situation. ))
+Before this work, these two standards were completely independent of each other. There was no standard way to encode an OWS Context in a GeoPackage and no way to reference GeoPackage content in an OWS Context. There is a community extension (<<GPKG-OWC-community>>) that allows for OWS Context files to be stored within a GeoPackage. However, this community extension encodes OWS Context content as either a JSON or ATOM document and GeoPackage developers have stated that they prefer to work entirely in the SQL domain as much as possible. 
 
 === Recommendations for Future Work
-(( This section should answer the question: What does this ER mean for the Working Group and OGC in general? What aspects shall be addressed next? In any specific order? What actions are necessary? ))
+If the approach described by this document is embraced by the relevant SWGs, the effort should culminate in a new OGC standard. This standard would be an extension to both the GeoPackage encoding standard and the OWS Context encoding standard. (Note that as far as the submitters are aware, this is the first time OGC has attempted to produce a standard that is an extension to two different standards.)
 
-(( This is a write up for why this ER should be important to the working group and OGC. This paragraph provides recommendations on how to further proceed with the achievements documented in this ER. ))
+The encoding of style information as part of this extension remains undefined. This is dependent on ongoing efforts by the Styled Layer Descriptor (SLD) SWG and other activities as described by the Portrayal Concept Development Study <<PCDS>>.
 
 ===	Document contributor contact points
 
@@ -28,7 +25,7 @@ All questions regarding this document should be directed to the editor or the co
 [width="80%",options="header",caption=""]
 |====================
 |Name |Organization
-|((editor)) | (( from org ))
+|Jeff Yutzler (editor) | Image Matters LLC
 |((contributor)) | ((from org))
 |====================
 

@@ -20,4 +20,8 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 * COTS	Commercial Off The Shelf
 * DCE	Distributed Computing Environment
 * DCOM	Distributed Component Object Model
+* GML Geography Markup Language
+* GPKG GeoPackage
 * IDL	Interface Definition Language
+* OWS OGC Web Services
+* SWG Standards Working Group

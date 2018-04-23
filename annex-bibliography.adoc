@@ -10,3 +10,6 @@ bibliography::[]
 
 // More information is provided here: https://github.com/asciidoctor/asciidoctor-bibtex
 // *****************************************************************************
+
+* [GPKG-OWC-community] Paul van Genuchten, Joana Simoes: GeoPackage OWC specification, https://github.com/GeoCat/geopackage-owc-spec/blob/master/owc_geopackage_extension.md (2018).
+* [PCDS] Jeff Yutzler et. al., Portrayal Concept Development Study, TBD (2018).
