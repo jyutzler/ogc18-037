@@ -17,6 +17,6 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 
 * GML Geography Markup Language
 * GPKG GeoPackage
-* IDL	Interface Definition Language
+* JSON JavaScript Object Notation
 * OWS OGC Web Services
 * SWG Standards Working Group

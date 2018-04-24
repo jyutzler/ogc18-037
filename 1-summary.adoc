@@ -16,7 +16,11 @@ GeoPackage and OWS Context are two OGC encoding standards that have potentially 
 In addition, the intent of the OWS Context extensions is to design them in such a way that they will work with generic relational databases, not just SQL-based GeoPackage. 
 
 === Prior-After Comparison
-Before this work, these two standards were completely independent of each other. There was no standard way to encode an OWS Context in a GeoPackage and no way to reference GeoPackage content in an OWS Context. There is a community extension (<<GPKG-OWC-community>>) that allows for OWS Context files to be stored within a GeoPackage. However, this community extension encodes OWS Context content as either a JSON or ATOM document and GeoPackage developers have stated that they prefer to work entirely in the SQL domain as much as possible. 
+Before this work, these two standards were completely independent of each other. There was neither a standard way to encode an OWS Context in a GeoPackage nor a standard way to reference GeoPackage content in an OWS Context. 
+
+In 2014 there was an attempt at a joint OWS Context / GeoPackage SWG, but this effort did not lead to any concrete work products.
+
+There is a community extension (<<GPKG-OWC-community>>) that allows for OWS Context files to be stored within a GeoPackage. However, this community extension encodes OWS Context content as either a JSON or Atom document and GeoPackage developers have stated that they prefer to work entirely in the SQL domain as much as possible. 
 
 === Recommendations for Future Work
 If the approach described by this document is embraced by the relevant SWGs, the effort should culminate in a new OGC standard. This standard would be an extension to both the GeoPackage encoding standard and the OWS Context encoding standard. (Note that as far as the submitters are aware, this is the first time OGC has attempted to produce a standard that is an extension to two different standards.)
