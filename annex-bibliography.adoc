@@ -13,3 +13,7 @@ bibliography::[]
 
 * [GPKG-OWC-community] Paul van Genuchten, Joana Simoes: GeoPackage OWC specification, https://github.com/GeoCat/geopackage-owc-spec/blob/master/owc_geopackage_extension.md (2018).
 * [PCDS] Jeff Yutzler et. al., Portrayal Concept Development Study, TBD (2018).
+* [GPKG-OWC-draft] Jeff Yutzler: Draft GeoPackage and OWS Context Endocing Standard, https://github.com/jyutzler/geopackage-ows-context (2018).
+* [SQLite] SQLite, https://www.sqlite.org/index.html (2018).
+
+
