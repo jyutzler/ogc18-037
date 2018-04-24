@@ -108,8 +108,31 @@ Add a row to this table for each OWS Context offering as shown in <<gpkgext_cont
 |`result`   | Result of the operation   
 |=======================================================================
 
+==== Use with GeoPackage Content
+To refer to a GeoPackage through an OWS Context stored in a GeoPackage, use the values listed in <<gpkgext_context_operations_gpkg>>.
+
+[[gpkgext_context_operations_gpkg]]
+.OWS Context Operations For GeoPackage
+[cols=",,options="header",]
+|=======================================================================
+|`Column` |`Value`
+|`code`   | `SELECT`   
+|`method`   | `SQL`   
+|`type`   | `SQL`   
+|`request`   | NULL   
+|`result`   | NULL   
+|=======================================================================
+
+==== Use with Other Types of Content
+It is possible to encode OGC Web Services in a GeoPackage-based OWS Context. The service type is determined by the `code` of `gpkgext_context_offerings`. The OWS Context Encoding Standard currently supports `WMS`, `WFS`, `WCS`, `WPS`, `CSW`, and `WMTS`. The `method`, `type`, `request`, and `result` columns are consistent with the other OWS Context Encodings (see <<OWSContext1.0Atom>> or <<OWSContext1.0GeoJSON>>).
+
+[NOTE]
+====
+It is the responsibility of the GeoPackage producer to ensure that the recipient is able to handle the stored content appropriately.
+====
+
 === `gpkgext_context_contents` Table
-Add a row to this table for each OWS Context operation as shown in <<gpkgext_context_contents_table>>. This row represents the results of the operation. (This table implements owc:SQLContent as per <<owc_sql_content>>.)
+For each offering representing RDBMS-based content, add a row to this table for each OWS Context operation as shown in <<gpkgext_context_contents_table>>. This row represents the contents of the offering. (This table implements owc:SQLContent as per <<owc_sql_content>>.)
 
 [[gpkgext_context_contents_table]]
 .OWS Context Contents Table Definition
