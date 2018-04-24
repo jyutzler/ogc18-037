@@ -27,5 +27,5 @@ This table mirrors the element names from <<OWSContext1.0CM>> fairly closely wit
 * `description` is used instead of "contentDescription" for readability.
 
 ==== Composition of `owc:SQLContents`
-Historically, OWS Context documents have always provided an examplar request to aid 
+Historically, OWS Context documents have always provided an examplar request to aid developers in using the layer correctly.
 The owc:SQLContents maintains this tradition with the `query` element. The `from` element was considered to be crucial because it allows access to the full scope of GeoPackage operations. There was consideration to breaking out the entire SQL query into its component parts (including WHERE clause, ORDER BY clause, and GROUP BY clause) but this idea was abandoned due to excess complexity and unclear benefit.

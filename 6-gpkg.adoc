@@ -10,12 +10,12 @@ To use this extension, add the following rows to this table:
 [cols=",,,,",options="header",]
 |=======================================================================
 |`table_name` |`column_name` | `extension_name` | `definition` | `scope`
-|`gpkgext_context`| NULL | `ows_context`| _See below_| `read-write`
-|`gpkgext_context_resources`| NULL | `ows_context`| _See below_| `read-write`
-|`gpkgext_context_offerings`| NULL | `ows_context`| _See below_| `read-write`
-|`gpkgext_context_operations`| NULL | `ows_context`| _See below_| `read-write`
-|`gpkgext_context_contents`| NULL | `ows_context`| _See below_| `read-write`
-|`gpkgext_context_styles`| NULL | `ows_context`| _See below_| `read-write`
+|`gpkgext_context`| NULL | `ows_context`| _See note below_| `read-write`
+|`gpkgext_context_resources`| NULL | `ows_context`| _See note below_| `read-write`
+|`gpkgext_context_offerings`| NULL | `ows_context`| _See note below_| `read-write`
+|`gpkgext_context_operations`| NULL | `ows_context`| _See note below_| `read-write`
+|`gpkgext_context_contents`| NULL | `ows_context`| _See note below_| `read-write`
+|`gpkgext_context_styles`| NULL | `ows_context`| _See note below_| `read-write`
 |=======================================================================
 
 [NOTE]
