@@ -2,19 +2,44 @@
 
 For the purposes of this report, the definitions specified in Clause 4 of the OWS Common Implementation Standard https://portal.opengeospatial.org/files/?artifact_id=38867&version=2[OGC 06-121r9] shall apply. In addition, the following terms and definitions apply.
 
-* term name
+* common operational picture
 
- text of the definition
+ A common operational picture is a single identical display of relevant information shared by more than one command. A common operational picture facilitates collaborative planning and assists all echelons to achieve situational awareness. (<<OWSContext1.0CM>>)
 
-* term name|synonym
+* contents
 
- text of the definition
+ As part of an OWS Context, . An operation has a single 
+
+ As part of a GeoPackage, contents represent a set of information layers that are stored in that GeoPackage.
+
+* context
+
+ A context document is a document describing the set of resources and their
+ configuration, and ancillary information (area of interest, etc.) which defines the
+ information representation of a common operating picture. (<<OWSContext1.0CM>>)
+
+* extension
+
+ An extension is a set of requirements for a standard designed to add new interoperable capabilities or constrain existing ones to improve interoperability.
+
+* offering
+
+ As part of an OWS Context, an offering is an object describes a specific information layer such as a service binding or inline content. A resource has at least one offering.
+ 
+* operation
+
+ As part of an OWS Context, an operation is an object describing the actual information exchange required to access the desired content. An offering has at least one operation.
+ 
+* resource
+
+ As part of an OWS Context, a resource is a configured set of information which is uniquely identifiable to a user. This can be realized as in-line or external content or by one or more configured web services. An OWS Context has at least one resource. (<<OWSContext1.0CM>>)
 
 
 ===	Abbreviated terms
 
 .NOTE: The abbreviated terms clause gives a list of the abbreviated terms and the symbols necessary for understanding this document. All symbols should be listed in alphabetical order. Some more frequently used abbreviated terms are provided below as examples.
 
+* COP Common Operational Picture
 * GML Geography Markup Language
 * GPKG GeoPackage
 * JSON JavaScript Object Notation
