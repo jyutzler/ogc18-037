@@ -1,6 +1,9 @@
 == Summary
-This discussion paper presents an approach to harmonize GeoPackage and OWS Context. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information. OWS Context is an open format linking geospatial web services and information.
+This discussion paper presents an approach to harmonize GeoPackage and OWS Context. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information. 
+OWS Context is an open format linking geospatial web services and information.
 Through extensions, these two formats can work together.
+A draft standard has been produced (see <<GPKG-OWC-draft>>).
+This document is designed to be a companion to that draft standard to assist in discussion. 
 
 This document is the work of collaboration between the GeoPackage and OWS Context Standards Working Groups (SWGs).
 

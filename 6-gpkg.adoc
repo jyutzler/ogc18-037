@@ -1,0 +1,126 @@
+[[GeoPackageClause]]
+== GeoPackage Extension
+This section describes a GeoPackage extension that supports OWS Context. The following subsections describe each relevant table and how it should be used in GeoPackage software. The full details of each table including schema and requirements are published in <<GPKG-OWC-draft>>.
+
+=== `gpkg_extensions` Table
+To use this extension, add the following rows to this table:
+
+[[gpkg_extensions_table]]
+.gpkg_extensions Rows
+[cols=",,,,",options="header",]
+|=======================================================================
+|`table_name` |`column_name` | `extension_name` | `definition` | `scope`
+|`gpkgext_context`| NULL | `ows_context`| _See below_| `read-write`
+|`gpkgext_context_resources`| NULL | `ows_context`| _See below_| `read-write`
+|`gpkgext_context_offerings`| NULL | `ows_context`| _See below_| `read-write`
+|`gpkgext_context_operations`| NULL | `ows_context`| _See below_| `read-write`
+|`gpkgext_context_contents`| NULL | `ows_context`| _See below_| `read-write`
+|`gpkgext_context_styles`| NULL | `ows_context`| _See below_| `read-write`
+|=======================================================================
+
+[NOTE]
+====
+The `extension_name` is a temporary name; if this extension is adopted by OGC it will gain the "gpkg_" prefix.
+The values in the definition column should refer in some human-readable way to an extension specification.
+====
+
+=== `gpkgext_context` Table
+Add a row to this table for each OWS Context as shown in <<gpkgext_context_table>>. (This table implements owc:Context from <<OWSContext1.0CM>>.)
+
+[[gpkgext_context_table]]
+.OWS Context Table Definition
+[cols=",",options="header",]
+|=======================================================================
+|`Column` |`Value`
+|`id` | Autoincrement primary key
+|`title` | A human-readable title for the OWS Context document
+|`abstract` | A human-readable description of the OWS Context document purpose and/or content
+|`last_change` | timestamp of last change to content, in ISO 8601 format
+|`min_x` | Bounding box minimum easting or longitude for the users of the context document
+|`min_y` | Bounding box minimum northing or latitude for the users of the context document 
+|`max_x` | Bounding box maximum easting or longitude for the users of the context document |`max_y` | Bounding box maximum northing or latitude for the users of the context document |`srs_id` | Spatial Reference System ID: `gpkg_spatial_ref_sys.srs_id` for the geographic extents
+|`author` | Identifier for the author of the document
+|`publisher` | Identifier for the publisher of the document
+|`creator` | The tool/application used to create the context document and its properties
+|`rights` | Rights which apply to the context document
+|`keywords` | Comma-delimited list of keywords related to this context document
+|`metadata_id` | `id` from `gpkg_metadata`
+|`min_time` | Beginning of time interval, in ISO 8601 format
+|`max_time` | End of time interval, in ISO 8601 format
+|=======================================================================
+
+=== `gpkgext_context_resources` Table
+Add a row to this table for each OWS Context resource as shown in <<gpkgext_context_resources_table>>. (This table implements owc:SQLResource as per <<ows_context_sql_resource>>.)
+
+[[gpkgext_context_resources_table]]
+.OWS Context Resources Table Definition
+[cols=",",options="header",]
+|=======================================================================
+|`Column` |`Value`
+|`id` | Autoincrement primary key
+|`context_id` | `id` from `gpkgext_context`
+|`author` | Identifier for the author of the resource definition
+|`publisher` | Identifier for the publisher of the resource definition
+|`rights` | Rights which apply to the resource definition
+|`min_x` | Bounding box minimum easting or longitude of the resource
+|`min_y` | Bounding box minimum northing or latitude of the resource
+|`max_x` | Bounding box maximum easting or longitude of the resource
+|`max_y` | Bounding box maximum northing or latitude of the resource
+|`srs_id` | Spatial Reference System ID: `gpkg_spatial_ref_sys.srs_id` for the geographic extents
+|`min_time` | Beginning of time interval, in ISO 8601 format
+|`max_time` | End of time interval, in ISO 8601 format
+|`description` | A reference to a description of the Context resource in alternative format
+|`active` | This flag indicates the state of the resource within the context document. It can be interpreted by the caller as required (this may be defined in a profile or in the specific service extensions)
+|`keywords` | Comma-delimited list of keywords related to this context document
+|`min_scale_denominator` | Minimum scale for the display of the layer
+|`max_scale_denominator` | Maximum scale for the display of the layer
+|`order` | The ascending order of the resource
+|=======================================================================
+
+=== `gpkgext_context_offerings` Table
+Add a row to this table for each OWS Context offering as shown in <<gpkgext_context_offerings_table>>. (This table implements owc:Offering from <<OWSContext1.0CM>>.)
+
+[[gpkgext_context_offerings_table]]
+.OWS Context Offerings Table Definition
+[cols=",",options="header",]
+|=======================================================================
+|`Column` |`Value`
+|`id` | Autoincrement primary key
+|`resource_id` | `id` from `gpkgext_context_resources`
+|`code`   | Code identifying the type of offering   
+|=======================================================================
+
+=== `gpkgext_context_operations` Table
+Add a row to this table for each OWS Context offering as shown in <<gpkgext_context_operations_table>>. (This table implements owc:Operation from <<OWSContext1.0CM>>.)
+
+[[gpkgext_context_operations_table]]
+.OWS Context Operations Table Definition
+[cols=",,options="header",]
+|=======================================================================
+|`Column` |`Value`
+|`id` | Autoincrement primary key
+|`offering_id` | `id` from `gpkgext_context_offerings`
+|`code`   | Code identifying the type of operation   
+|`method`   | Name of operation method request   
+|`type`   | MIMEType of the return result   
+|`requestURL`   | Service Request URL   
+|`request`   | Optional request body content   
+|`result`   | Result of the operation   
+|=======================================================================
+
+=== `gpkgext_context_contents` Table
+Add a row to this table for each OWS Context offering as shown in <<gpkgext_context_contents_table>>. (This table implements owc:SQLContent as per <<owc_sql_content>>.)
+
+[[gpkgext_context_contents_table]]
+.OWS Context Contents Table Definition
+[cols=",",options="header",]
+|=======================================================================
+|`Column` |`Value`
+|`id` | Autoincrement primary key
+|`operation_id` | `id` from `gpkgext_context_operations`
+|`from`   | A single table or view name   
+|`query`   | The actual SQL query   
+|=======================================================================
+
+=== `gpkgext_context_styles` Table
+The definition for this table is TBD. (It will implement owc:StyleSet from <<OWSContext1.0CM>>.)

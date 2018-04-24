@@ -1,12 +1,13 @@
 [[OWSContextClause]]
 == OWS Context Extension
-This section describes a set of extensions to OWS Context needed to support relational databases and SQLite-based GeoPackage.
+This section describes a set of extensions to the OWS Context Encoding Standard needed to support relational databases, including but not limited to SQLite-based GeoPackage.
 
 === SQL Resource Extension
 This OWS Context extension defines a new datatype called _owc:SQLResource_.
 This extension applies when a Context document is completely stored within a relational (SQL) database. 
 Since relational databases have no mechanical way to control ordering, this extension provides an new datatype that contains an element that can be implemented as a column to support ordering.
 
+[[ows_context_sql_resource]]
 ==== Datatype owc:SQLResource 
 This datatype extends _owc:Resource_ with the element(s) listed in <<sql_select_resource_extension_table>>.
 

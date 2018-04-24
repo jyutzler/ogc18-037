@@ -135,17 +135,19 @@ include::4-overview.adoc[]
 
 include::5-ows-context.adoc[]
 
+include::6-gpkg.adoc[]
+
 // you may add any number of chapters as required here
 
 // *****************************************************************************
 // Editors add or remove annexes as necessary.
 // *****************************************************************************
 
-include::annex-a.adoc[]
+// include::annex-a.adoc[]
 
-include::annex-b.adoc[]
+// include::annex-b.adoc[]
 
-include::annex-c.adoc[]
+// include::annex-c.adoc[]
 
 // *****************************************************************************
 // Revision History should be the last annex before the Bibliography.
