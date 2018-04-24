@@ -1,0 +1,31 @@
+[[DiscussionClause]]
+== Discussion
+=== OWS Context Extensions for Relational Databases
+For the most part, the development of a relational database (RDBMS) encoding for OWS Context was seamless. Only one new element (`order` for _owc:SQLResource_) had to be added. The remainder of the effort centered around identifying the appropriate set of constraints for each element and the proper location of codes. Care was taken to ensure that the extensions would apply equally to any RDBMS even though there was no immediate need for this capability at this time. This approach does future-proof the effort to an extent. If nothing else, it should be seamless for someone to implement the GeoPackage schema in another RDBMS. 
+
+=== GeoPackage Extension for OWS Context
+==== SQL Basis 
+Previous attempts to provide OWS Context support in GeoPackage (including <<GPKG-OWC-community>>) included leveraging the existing GeoJSON encoding for OWS Context. However, developers have consistently requested an SQL-based solution so that developers do not need to deal with parsing text-based documents. 
+This also gives developers the flexibility to take full advantage of the relational database (joins, etc.).
+Accordingly, the extension was developed using a normalized table structure and a set of primary and foreign key relationships. 
+
+==== Composition of the `gpkgext_context` Table
+This table mirrors the element names from <<OWSContext1.0CM>> fairly closely with a few exceptions:
+
+* `last_change` is used instead of "updateDate" to maintain consistency with `gpkg_contents`.
+* `min_x`, `min_y`, `max_x`, `max_y` are used instead of "areaOfInterest" to maintain consistency with `gpkg_contents`. In addition, `srs_id` is added to ensure that the coordinates are interpreted properly by applications.
+* `metadata_id` is used instead of "contextMetadata" because GeoPackage already has a mechanism for storing registered metadata, the http://www.geopackage.org/spec120/#extension_metadata[Metadata Extension].
+* `min_time` and `max_time` are used instead of "timeIntervalOfInterest" because SQLite has no native way to store time intervals.
+
+==== Composition of the `gpkgext_context_resources` Table
+This table mirrors the element names from <<OWSContext1.0CM>> fairly closely with a few exceptions:
+
+* `last_change` is used instead of "updateDate" to maintain consistency with `gpkg_contents`.
+* `min_x`, `min_y`, `max_x`, `max_y` are used instead of "areaOfInterest" to maintain consistency with `gpkg_contents`. In addition, `srs_id` is added to ensure that the coordinates are interpreted properly by applications.
+* `metadata_id` is used instead of "contextMetadata" because GeoPackage already has a mechanism for storing registered metadata, the http://www.geopackage.org/spec120/#extension_metadata[Metadata Extension].
+* `min_time` and `max_time` are used instead of "timeIntervalOfInterest" because SQLite has no native way to store time intervals.
+* `description` is used instead of "contentDescription" for readability.
+
+==== Composition of `owc:SQLContents`
+Historically, OWS Context documents have always provided an examplar request to aid 
+The owc:SQLContents maintains this tradition with the `query` element. The `from` element was considered to be crucial because it allows access to the full scope of GeoPackage operations. There was consideration to breaking out the entire SQL query into its component parts (including WHERE clause, ORDER BY clause, and GROUP BY clause) but this idea was abandoned due to excess complexity and unclear benefit.

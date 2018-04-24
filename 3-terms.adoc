@@ -8,7 +8,7 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 
 * contents
 
- As part of an OWS Context, . An operation has a single 
+ As part of an OWS Context, a document that acts as a request or a response to an operation. 
 
  As part of a GeoPackage, contents represent a set of information layers that are stored in that GeoPackage.
 
@@ -44,6 +44,7 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 * GPKG GeoPackage
 * JSON JavaScript Object Notation
 * OWS OGC Web Services
+* RDBMS Relational Database Management System
 * SLD Styled Layer Descriptor
 * SWG Standards Working Group
 * XML eXtensible Markup language

@@ -1,10 +1,10 @@
 [[Overview]]
 == Overview
 
-Section 5 describes extensions to the OWS Context Encoding Standard.
+Section 5 (<<OWSContextClause>>) describes extensions to the OWS Context Encoding Standard.
 
-Section 6 describes extensions to the GeoPackage Encoding Standard.
+Section 6 (<<GeoPackageClause>>) describes extensions to the GeoPackage Encoding Standard.
 
-Section 7 describes design decisions and other discussion points that are relevant to the development of this set of extensions.
+Section 7 (<<DiscussionClause>>) describes design decisions and other discussion points that are relevant to the development of this set of extensions.
 
-Annex A presents an example OWS Context document in the GeoJSON format that demonstrates the use of these extensions.
+Annex A (<<OWSContextExample>>) presents an example OWS Context document in the GeoJSON format that demonstrates the use of these extensions.

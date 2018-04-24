@@ -138,6 +138,8 @@ include::5-ows-context.adoc[]
 
 include::6-gpkg.adoc[]
 
+include::7-discussion.adoc[]
+
 // you may add any number of chapters as required here
 
 // *****************************************************************************
@@ -146,7 +148,7 @@ include::6-gpkg.adoc[]
 
 // include::annex-a.adoc[]
 
-// include::annex-b.adoc[]
+include::annex-example.adoc[]
 
 // include::annex-c.adoc[]
 

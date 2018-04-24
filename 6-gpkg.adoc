@@ -1,5 +1,5 @@
 [[GeoPackageClause]]
-== GeoPackage Extension
+== GeoPackage Extension for OWS Context
 This section describes a GeoPackage extension that supports OWS Context. The following subsections describe each relevant table and how it should be used in GeoPackage software. The full details of each table including schema and requirements are published in <<GPKG-OWC-draft>>.
 
 === `gpkg_extensions` Table

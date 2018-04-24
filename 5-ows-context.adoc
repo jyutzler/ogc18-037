@@ -1,5 +1,5 @@
 [[OWSContextClause]]
-== OWS Context Extension
+== OWS Context Extensions for Relational Databases
 This section describes a set of extensions to the OWS Context Encoding Standard needed to support relational databases, including but not limited to SQLite-based GeoPackage.
 
 === SQL Resource Extension
