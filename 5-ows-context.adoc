@@ -1,0 +1,122 @@
+[[OWSContextClause]]
+== OWS Context Extension
+This section describes a set of extensions to OWS Context needed to support relational databases and SQLite-based GeoPackage.
+
+=== SQL Resource Extension
+This OWS Context extension defines a new datatype called _owc:SQLResource_.
+This extension applies when a Context document is completely stored within a relational (SQL) database. 
+Since relational databases have no mechanical way to control ordering, this extension provides an new datatype that contains an element that can be implemented as a column to support ordering.
+
+==== Datatype owc:SQLResource 
+This datatype extends _owc:Resource_ with the element(s) listed in <<sql_select_resource_extension_table>>.
+
+[[sql_select_resource_extension_table]]
+.Datatype owc:SQLSelectResource
+[cols=",,,",options="header",]
+|=======================================================================
+|Name |Definition | Data Type and Values |Multiplicity and Use
+|`order`|The ascending order of configured resources| DOUBLE| Zero or one (optional)
+|=======================================================================
+
+[NOTE]
+====
+This element is a double because the conventional way to set the order of an element in the middle of an ordered list is to set its order to a value midway between the preceding and following list elements.
+====
+
+=== SQL Content Extension
+This extension defines the following:
+
+* a set of constraints on two existing datatypes.
+* a new datatype
+
+This extension applies when a Context document refers to content within a relational (SQL) database.
+
+==== Constraints on Datatype owc:Offering
+The `code` of an _owc:Offering_ element determines whether this extension is in use for that offering.
+When the SQL Content Extension is in use, an _owc:Offering_ is constrained as per <<sql_offering_table>>.
+
+[NOTE]
+====
+The changes are [underline]#underlined#.
+====
+
+[[sql_offering_table]]
+.Datatype owc:Offering for SQL Content Extension
+[cols=",,,",options="header",]
+|=======================================================================
+|Name |Definition | Data Type and Values |Multiplicity and Use
+|`code`|Offering Code| CharacterString| [underline]#One (mandated)# 
+|`operation` |Operations used to invoke the service   | owc:Operation | [underline]#One (mandatory)#
+|`content`  |N/A  |N/A   | [underline]#Zero (prohibited)#
+|=======================================================================
+
+==== Constraints on Datatype owc:Operation
+When the SQL Content Extension is in use for an offering, _owc:Operation_ child elements of that offering are constrained as per <<sql_operation_table>>.
+
+[NOTE]
+====
+The changes are [underline]#underlined#.
+====
+
+[[sql_operation_table]]
+.Datatype owc:Operation for SQL Content Extension
+[cols=",,,",options="header",]
+|=======================================================================
+|Name |Definition | Data Type and Values |Multiplicity and Use
+|`code`        |_as per extension_| CharacterString| [underline]#One (mandated)# 
+|`method`      |[underline]#`SELECT`#| CharacterString| [underline]#One (mandated)# 
+|`type`        |[underline]#`SQL Record Set`#   | CharacterString | [underline]#One (mandated)#
+|`requestURL`  |Service Request URL   | URI  | One (mandatory) 
+|`request`     |Request body content   |[underline]#owc:SQLContent# (<<owc_sql_content>>)  | [underline]#One (mandatory)#
+|`result`      |N/A   |N/A   | [underline]#Zero (prohibited)#
+|`extension`   |Application specific content|N/A | Zero or more (optional)
+|=======================================================================
+
+[NOTE]
+====
+The `code` for GeoPackage is `GPKG` (other codes are possible, but have not been defined yet).
+If the referenced content is within the database containing the Context, the `requestURL` should be `.`. Otherwise the `requestURL` should be a connect string.
+====
+
+[[owc_sql_content]]
+==== Datatype owc:SQLContent
+When the SQL Content Extension is in use for an _offering_, the request body content for its _operation_ (see `request` above) is an _owc:SQLContent_ as described by <<sql_content_table>>. 
+For a pure SQL implementation, clients may use the `query` element directly.
+For a GeoPackage, the `from` may be more useful because it refers to a table name that can be looked up in _gpkg_contents_, allowing it to be used as a proper GeoPackage content type. 
+
+[[sql_content_table]]
+.Datatype owc:SQLContent
+[cols=",,,",options="header",]
+|=======================================================================
+|Name |Definition | Data Type and Values |Multiplicity and Use
+|`from`        |a single table or view name|CharacterString | One (mandatory)
+|`query`       |the actual SQL query|CharacterString | One (mandatory)
+|`extension`   |Application specific content|N/A | Zero or more (optional)
+|=======================================================================
+
+[NOTE]
+====
+If joins are needed, they should be established as views beforehand so that the `from` element can be a single value.
+====
+
+[WARNING]
+====
+It is the responsibility of the OWS Context client to verify that the `query` provided is safe to execute on that database. OWS Context clients may wish to construct their own queries based on the `from` value and the schema of that table.
+====
+
+=== GeoPackage Extension
+This OWS Context extension supports content stored in a GeoPackage. This can include referencing itself (i.e., when the context and the content are in the same GeoPackage) or local databases.
+
+When the `code` of an owc:Offering is one of the codes listed in <<gpkg_content_types>>, the SQL Content Extension SHALL be used for that offering and the content type SHALL be as per the dependency (see <<GeoPackageClause>>).
+
+[[gpkg_content_types]]
+.GeoPackage Content Types
+[cols=",",options="header",]
+|=======================================================================
+|Code |Dependency
+|`features`      |http://www.geopackage.org/spec120/#_features[http://www.opengis.net/doc/IS/geopackage/1.2/opt/features]
+|`tiles`      |http://www.geopackage.org/spec120/#_tiles[http://www.opengis.net/doc/IS/geopackage/1.2/opt/tiles] 
+|`attributes`      |http://www.geopackage.org/spec120/#_attributes[http://www.opengis.net/doc/IS/geopackage/1.2/opt/attributes]
+|`2d-gridded-coverage`      |http://docs.opengeospatial.org/is/17-066r1/17-066r1.html
+|=======================================================================
+
