@@ -33,12 +33,13 @@ This extension defines the following:
 This extension applies when a Context document refers to content within a relational (SQL) database.
 
 ==== Constraints on Datatype owc:Offering
-The `code` of an _owc:Offering_ element determines whether this extension is in use for that offering.
+The `code` of an _owc:Offering_ element determines whether this extension is in use for that offering. 
+(For example, the codes for GeoPackage offerings are listed in <<gpkg_offering_codes>>.)
 When the SQL Content Extension is in use, an _owc:Offering_ is constrained as per <<sql_offering_table>>.
 
 [NOTE]
 ====
-The changes are [underline]#underlined#.
+The constraints are [underline]#underlined#.
 ====
 
 [[sql_offering_table]]
@@ -56,7 +57,7 @@ When the SQL Content Extension is in use for an offering, _owc:Operation_ child 
 
 [NOTE]
 ====
-The changes are [underline]#underlined#.
+The constraints are [underline]#underlined#.
 ====
 
 [[sql_operation_table]]
@@ -81,7 +82,7 @@ If the referenced content is within the database containing the Context, the `re
 
 [[owc_sql_content]]
 ==== Datatype owc:SQLContent
-When the SQL Content Extension is in use for an _offering_, the request body content for its _operation_ (see `request` above) is an _owc:SQLContent_ as described by <<sql_content_table>>. 
+When the SQL Content Extension is in use for an _offering_ (for example, the code `GPKG` as described in , the request body content for its _operation_ (see `request` above) is an _owc:SQLContent_ as described by <<sql_content_table>>. 
 For a pure SQL implementation, clients may use the `query` element directly.
 For a GeoPackage, the `from` may be more useful because it refers to a table name that can be looked up in _gpkg_contents_, allowing it to be used as a proper GeoPackage content type. 
 
@@ -105,13 +106,14 @@ If joins are needed, they should be established as views beforehand so that the 
 It is the responsibility of the OWS Context client to verify that the `query` provided is safe to execute on that database. OWS Context clients may wish to construct their own queries based on the `from` value and the schema of that table.
 ====
 
+[[owc-geopackage-extension]]
 === GeoPackage Extension
-This OWS Context extension supports content stored in a GeoPackage. This can include referencing itself (i.e., when the context and the content are in the same GeoPackage) or local databases.
+This OWS Context extension supports content stored in a GeoPackage. This can include referencing itself (i.e., when the context and the content are in the same GeoPackage) or GeoPackages that are available on the local filesystem.
 
-When the `code` of an owc:Offering is one of the codes listed in <<gpkg_content_types>>, the SQL Content Extension SHALL be used for that offering and the content type SHALL be as per the dependency (see <<GeoPackageClause>>).
+When the `code` of an owc:Offering is one of the codes listed in <<gpkg_offering_codes>>, the SQL Content Extension applies and the `code` for operations is `GPKG`. The `from` of the SQLContent corresponds to the name of the user-defined table in the GeoPackage. This allows clients to use `gpkg_contents` and other GeoPackage tables normally.
 
-[[gpkg_content_types]]
-.GeoPackage Content Types
+[[gpkg_offering_codes]]
+.GeoPackage Offering Codes
 [cols=",",options="header",]
 |=======================================================================
 |Code |Dependency

@@ -19,4 +19,7 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 * GPKG GeoPackage
 * JSON JavaScript Object Notation
 * OWS OGC Web Services
+* SLD Styled Layer Descriptor
 * SWG Standards Working Group
+* XML eXtensible Markup language
+
