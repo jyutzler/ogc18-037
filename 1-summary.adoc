@@ -1,9 +1,9 @@
 == Summary
-This discussion paper presents an approach to harmonize GeoPackage and OWS Context. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information. 
+This OGC discussion paper presents an approach to harmonize the OGC GeoPackage and OWS Context standards. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information. 
 OWS Context is an open format linking geospatial web services and information.
 Through extensions, these two formats can work together.
 A draft standard has been produced (see <<GPKG-OWC-draft>>).
-This document is designed to be a companion to that draft standard to assist in discussion. 
+This Discussion Paper is designed to be a companion to that draft standard to assist in discussion. 
 
 This document is the work of collaboration between the GeoPackage and OWS Context Standards Working Groups (SWGs).
 
@@ -16,9 +16,9 @@ GeoPackage and OWS Context are two OGC encoding standards that have potentially 
 In addition, the intent of the OWS Context extensions is to design them in such a way that they will work with generic relational databases, not just SQLite-based GeoPackage. 
 
 === Prior-After Comparison
-Before this work, these two standards were completely independent of each other. There was neither a standard way to encode an OWS Context in a GeoPackage nor a standard way to reference GeoPackage content in an OWS Context. In 2014 there was an attempt at a joint OWS Context / GeoPackage SWG, but this effort did not lead to any concrete work products.
+Before this work, the GeoPackage and OWS Context standards were completely independent of each other. There was neither a standard way to encode an OWS Context in a GeoPackage nor a standard way to reference GeoPackage content in an OWS Context. In 2014, a joint OWS Context / GeoPackage SWG was formed, but unfortunately this effort did not lead to any concrete work products.
 
-At the time of writing, the market adoption of OWS Context appears to be fairly limited. The writers of this discussion paper are not aware of any studies analyzing OWS Context adoption or viewpoints of what would lead to increased adoption. It is possible that the acceptance of the proposals in this paper will lead to increased adoption of both OWS Context and GeoPackage.
+As of the date of this document, the market adoption of OWS Context appears to be fairly limited. The authors of this OGC Discussion Paper are not aware of any studies analyzing OWS Context adoption or viewpoints of what would lead to increased adoption. Acceptance of the proposals in this paper could possibly lead to increased adoption of both OWS Context and GeoPackage.
 
 There is a community extension (<<GPKG-OWC-community>>) that allows for OWS Context files to be stored within a GeoPackage. However, this community extension encodes OWS Context content as either a JSON or Atom document. Since GeoPackage is an SQLite (relational) database, GeoPackage developers have stated that they prefer to work entirely in the SQL domain as much as possible. 
 

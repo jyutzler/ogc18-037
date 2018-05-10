@@ -20,7 +20,7 @@ To use this extension, add the following rows to this table:
 
 [NOTE]
 ====
-The `extension_name` is a temporary name; if this extension is adopted by OGC it will gain the "gpkg_" prefix.
+The `extension_name` is a temporary name; if this extension is adopted by the OGC, the extension will gain the "gpkg_" prefix.
 The values in the definition column should refer in some human-readable way to an extension specification.
 ====
 
@@ -124,11 +124,11 @@ To refer to a GeoPackage through an OWS Context stored in a GeoPackage, use the 
 |=======================================================================
 
 ==== Use with Other Types of Content
-It is possible to encode OGC Web Services in a GeoPackage-based OWS Context. The service type is determined by the `code` of `gpkgext_context_offerings`. The OWS Context Encoding Standard currently supports `WMS`, `WFS`, `WCS`, `WPS`, `CSW`, and `WMTS`. The `method`, `type`, `request`, and `result` columns are consistent with the other OWS Context Encodings (see <<OWSContext1.0Atom>> or <<OWSContext1.0GeoJSON>>).
+OGC Web Services can be encoded in a GeoPackage-based OWS Context. The service type is determined by the `code` of `gpkgext_context_offerings`. The OWS Context Encoding Standard currently supports `WMS`, `WFS`, `WCS`, `WPS`, `CSW`, and `WMTS`. The `method`, `type`, `request`, and `result` columns are consistent with the other OWS Context Encodings (see <<OWSContext1.0Atom>> or <<OWSContext1.0GeoJSON>>).
 
 [NOTE]
 ====
-It is the responsibility of the GeoPackage producer to ensure that the recipient is able to handle the stored content appropriately.
+The GeoPackage producer has the responsibility to ensure that the recipient is able to handle the stored content in an appropriate manner.
 ====
 
 === `gpkgext_context_contents` Table
