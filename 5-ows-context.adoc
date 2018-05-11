@@ -82,7 +82,7 @@ If the referenced content is within the database containing the Context, the `re
 
 [[owc_sql_content]]
 ==== Datatype owc:SQLContent
-When the SQL Content Extension is in use for an _offering_ (for example, the code `GPKG` as described in , the request body content for its _operation_ (see `request` above) is an _owc:SQLContent_ as described by <<sql_content_table>>. 
+When the SQL Content Extension is in use for an _offering_ (for example, the code `GPKG` as described in the note above), the request body content for its _operation_ (see `request` above) is an _owc:SQLContent_ as described by <<sql_content_table>>. 
 For a pure SQL implementation, clients may use the `query` element directly.
 For a GeoPackage, the `from` may be more useful because it refers to a table name that can be looked up in _gpkg_contents_, allowing it to be used as a proper GeoPackage content type. 
 

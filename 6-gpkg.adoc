@@ -21,7 +21,7 @@ To use this extension, add the following rows to this table:
 [NOTE]
 ====
 The `extension_name` is a temporary name; if this extension is adopted by the OGC, the extension will gain the "gpkg_" prefix.
-The values in the definition column should refer in some human-readable way to an extension specification.
+In general, the values in the definition column should reference (in some human-readable way) an extension specification, which may or may not be a standard. If this extension is adopted by the OGC, the definition should be a URL for the standard. 
 ====
 
 === `gpkgext_context` Table
