@@ -1,7 +1,7 @@
 [[DiscussionClause]]
 == Discussion
 === OWS Context Extensions for Relational Databases
-For the most part, the development of a relational database (RDBMS) encoding for OWS Context was seamless. Only one new element (`order` for _owc:SQLResource_) had to be added. The remainder of the effort centered on identifying the appropriate set of constraints for each element and the proper location of codes. Care was taken to ensure that the extensions would apply equally to any RDBMS even though there was no immediate need for this capability at this time. To an extent, the approach described in this Discussion Paper does future-proof the effort. If nothing else, it should be seamless for someone to implement the GeoPackage schema in an RDBMS other than SQLite. 
+For the most part, the development of a relational database (RDBMS) encoding for OWS Context was seamless. Only one new element (`order` for _owc:SQLResource_) had to be added. The remainder of the effort centered on identifying the appropriate set of constraints for each element and the proper codes for the offerings and operations tables. Care was taken to ensure that the extensions would apply equally to any RDBMS even though there was no immediate need for this capability at this time. To an extent, the approach described in this Discussion Paper does future-proof the effort. If nothing else, it should be seamless for someone to implement the GeoPackage schema in an RDBMS other than SQLite. 
 
 === GeoPackage Extension for OWS Context
 ==== SQL Basis 
