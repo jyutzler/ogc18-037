@@ -1,9 +1,8 @@
 == Summary
-This OGC discussion paper presents an approach to harmonize the OGC GeoPackage and OWS Context standards. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information. 
+This OGC discussion paper presents an approach to harmonize the OGC GeoPackage and OWS Context standards. GeoPackage is an open, standards-based, platform-independent, portable, self-describing, compact format for storing and transferring geospatial data and information as part of an https://www.sqlite.org/index.html[SQLite] database. 
 OWS Context is an open format linking geospatial web services and information.
 Through extensions, these two formats can work together.
-A draft standard has been produced (see <<GPKG-OWC-draft>>).
-This Discussion Paper is designed to be a companion to that draft standard to assist in discussion. 
+A https://github.com/jyutzler/geopackage-ows-context[draft standard] has been produced and this Discussion Paper is designed to be a companion to that draft standard to assist in discussion. 
 
 This document is the work of collaboration between the GeoPackage and OWS Context Standards Working Groups (SWGs).
 
@@ -20,12 +19,12 @@ Before this work, the GeoPackage and OWS Context standards were completely indep
 
 As of the date of this document, the market adoption of OWS Context appears to be fairly limited. The authors of this OGC Discussion Paper are not aware of any studies analyzing OWS Context adoption or viewpoints of what would lead to increased adoption. Acceptance of the proposals in this paper could possibly lead to increased adoption of both OWS Context and GeoPackage.
 
-There is a community extension (<<GPKG-OWC-community>>) that allows for OWS Context files to be stored within a GeoPackage. However, this community extension encodes OWS Context content as either a JSON or Atom document. Since GeoPackage is an SQLite (relational) database, GeoPackage developers have stated that they prefer to work entirely in the SQL domain as much as possible. 
+There is a https://github.com/GeoCat/geopackage-owc-spec/blob/master/owc_geopackage_extension.md[community extension] that allows for OWS Context files to be stored within a GeoPackage. However, this community extension encodes OWS Context content as either a JSON or Atom document. Since GeoPackage is an SQLite (relational) database, GeoPackage developers have stated that they prefer to work entirely in the SQL domain as much as possible. 
 
 === Recommendations for Future Work
 The encoding of style information as part of the GeoPackage extension remains undefined. This is an essential component of OWS Context and without it the implementation is incomplete. The existing SLD encoding standard is tightly coupled to the XML format. Since, as mentioned previously, GeoPackage developers prefer to work in the SQL domain, this format is not suitable. The standardization process should be delayed until this issue is resolved. 
 
-The development of a suitable style encoding for GeoPackage is is dependent on ongoing efforts by the Styled Layer Descriptor (SLD) SWG and other activities as described by the Portrayal Concept Development Study <<PCDS>>. As of this writing, the SLD SWG is in the process of producing a conceptual model for SLD2 that would support multiple encodings. If this model is produced and adopted by OGC, it would be appropriate to produce a GeoPackage encoding for it.
+The development of a suitable style encoding for GeoPackage is is dependent on ongoing efforts by the Styled Layer Descriptor (SLD) SWG and other activities as described by the http://www.opengeospatial.org/projects/initiatives/portrayalcds[Portrayal Concept Development Study]. As of this writing, the SLD SWG is in the process of producing a conceptual model for SLD2 that would support multiple encodings. If this model is produced and adopted by OGC, it would be appropriate to produce a GeoPackage encoding for it.
 
 If the approach described by this document is embraced by the relevant SWGs, the effort should culminate in a new OGC standard. This standard would be an extension to both the GeoPackage encoding standard and the OWS Context encoding standard. (Note that as far as the authors are aware, this is the first time OGC has attempted to produce a standard that is an extension to two different standards simultaneously.)
 

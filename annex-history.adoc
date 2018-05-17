@@ -7,5 +7,5 @@
 |====================
 |Date |Editor |Release | Primary clauses modified |Descriptions
 |April 24, 2018 |J. Yutzler | .1 |all |initial version
-|May 10, 2018   |J. Yutzler   |.9   |1, 6, 7   |administrative edits   |
+|May 17, 2018   |J. Yutzler   |.9   |1, 6, 7   |administrative edits   |
 |====================

@@ -5,7 +5,7 @@ For the most part, the development of a relational database (RDBMS) encoding for
 
 === GeoPackage Extension for OWS Context
 ==== SQL Basis 
-Previous attempts to provide OWS Context support in GeoPackage (including <<GPKG-OWC-community>>) included leveraging the existing GeoJSON encoding for OWS Context. However, developers have consistently requested an SQL-based solution so that developers do not need to deal with parsing text-based documents. 
+Previous attempts to provide OWS Context support in GeoPackage (including the previously mentioned https://github.com/GeoCat/geopackage-owc-spec/blob/master/owc_geopackage_extension.md[community extension]) included leveraging the existing GeoJSON encoding for OWS Context. However, developers have consistently requested an SQL-based solution so that developers do not need to deal with parsing text-based documents. 
 This also gives developers the flexibility to take full advantage of the relational database (joins, etc.).
 Accordingly, the GPKG-OWC extension was developed using a normalized table structure and a set of primary and foreign key relationships. 
 
