@@ -27,8 +27,8 @@ This element is a double because the conventional way to set the order of an ele
 === SQL Content Extension
 This extension defines the following:
 
-* a set of constraints on two existing datatypes.
-* a new datatype
+* a set of constraints on two existing datatypes, and
+* a new datatype.
 
 This extension applies when a Context document refers to content within a relational (SQL) database.
 

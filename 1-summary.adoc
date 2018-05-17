@@ -37,7 +37,6 @@ All questions regarding this document should be directed to the editor or the co
 |====================
 |Name |Organization
 |Jeff Yutzler (editor) | Image Matters LLC
-|((contributor)) | ((from org))
 |====================
 
 
