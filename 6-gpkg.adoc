@@ -5,7 +5,7 @@ This section describes a GeoPackage extension that supports OWS Context. The fol
 === `gpkg_extensions` Table
 To use this extension, add the following rows to this table:
 
-[[gpkg_extensions_table]]
+[#gpkg_extensions_table,reftext='{table-caption} {counter:table-num}']
 .gpkg_extensions Rows
 [cols=",,,,",options="header",]
 |=======================================================================
@@ -27,7 +27,7 @@ In general, the values in the definition column should reference (in some human-
 === `gpkgext_context` Table
 Add a row to this table for each OWS Context as shown in <<gpkgext_context_table>>. (This table implements owc:Context from <<OWSContext1.0CM>>.)
 
-[[gpkgext_context_table]]
+[#gpkgext_context_table,reftext='{table-caption} {counter:table-num}']
 .OWS Context Table Definition
 [cols=",",options="header",]
 |=======================================================================
@@ -52,7 +52,7 @@ Add a row to this table for each OWS Context as shown in <<gpkgext_context_table
 === `gpkgext_context_resources` Table
 Add a row to this table for each OWS Context resource as shown in <<gpkgext_context_resources_table>>. (This table implements owc:SQLResource as per <<ows_context_sql_resource>>.)
 
-[[gpkgext_context_resources_table]]
+[#gpkgext_context_resources_table,reftext='{table-caption} {counter:table-num}']
 .OWS Context Resources Table Definition
 [cols=",",options="header",]
 |=======================================================================
@@ -80,7 +80,7 @@ Add a row to this table for each OWS Context resource as shown in <<gpkgext_cont
 === `gpkgext_context_offerings` Table
 Add a row to this table for each OWS Context offering as shown in <<gpkgext_context_offerings_table>>. (This table implements owc:Offering from <<OWSContext1.0CM>>.)
 
-[[gpkgext_context_offerings_table]]
+[#gpkgext_context_offerings_table,reftext='{table-caption} {counter:table-num}']
 .OWS Context Offerings Table Definition
 [cols=",",options="header",]
 |=======================================================================
@@ -93,7 +93,7 @@ Add a row to this table for each OWS Context offering as shown in <<gpkgext_cont
 === `gpkgext_context_operations` Table
 Add a row to this table for each OWS Context offering as shown in <<gpkgext_context_operations_table>>. (This table implements owc:Operation from <<OWSContext1.0CM>>.)
 
-[[gpkgext_context_operations_table]]
+[#gpkgext_context_operations_table,reftext='{table-caption} {counter:table-num}']
 .OWS Context Operations Table Definition
 [cols=",,options="header",]
 |=======================================================================
@@ -102,7 +102,7 @@ Add a row to this table for each OWS Context offering as shown in <<gpkgext_cont
 |`offering_id` | `id` from `gpkgext_context_offerings`
 |`code`   | Code identifying the type of operation   
 |`method`   | Name of operation method request   
-|`type`   | MIMEType of the return result   
+|`type`   | MIME type of the return result   
 |`requestURL`   | Service Request URL   
 |`request`   | Optional request body content   
 |`result`   | Result of the operation   
@@ -111,7 +111,7 @@ Add a row to this table for each OWS Context offering as shown in <<gpkgext_cont
 ==== Use with GeoPackage Content
 To refer to a GeoPackage through an OWS Context stored in a GeoPackage, use the values listed in <<gpkgext_context_operations_gpkg>>.
 
-[[gpkgext_context_operations_gpkg]]
+[#gpkgext_context_operations_gpkg,reftext='{table-caption} {counter:table-num}']
 .OWS Context Operations For GeoPackage
 [cols=",,options="header",]
 |=======================================================================
@@ -134,7 +134,7 @@ The GeoPackage producer has the responsibility to ensure that the recipient is a
 === `gpkgext_context_contents` Table
 For each offering representing RDBMS-based content, add a row to this table for each OWS Context operation as shown in <<gpkgext_context_contents_table>>. This row represents the contents of the offering. (This table implements owc:SQLContent as per <<owc_sql_content>>.)
 
-[[gpkgext_context_contents_table]]
+[#gpkgext_context_contents_table,reftext='{table-caption} {counter:table-num}']
 .OWS Context Contents Table Definition
 [cols=",",options="header",]
 |=======================================================================
@@ -146,4 +146,4 @@ For each offering representing RDBMS-based content, add a row to this table for 
 |=======================================================================
 
 === `gpkgext_context_styles` Table
-The definition for this table is TBD. (It will implement owc:StyleSet from <<OWSContext1.0CM>>.)
+The definition for this table is _to be decided_. (It will implement owc:StyleSet from <<OWSContext1.0CM>>.)

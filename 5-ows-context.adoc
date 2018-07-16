@@ -5,13 +5,13 @@ This section describes a set of extensions to the OWS Context Encoding Standard 
 === SQL Resource Extension
 This OWS Context extension defines a new datatype called _owc:SQLResource_.
 This extension applies when a Context document is completely stored within a relational (SQL) database. 
-Since relational databases have no mechanical way to control ordering, this extension provides an new datatype that contains an element that can be implemented as a column to support ordering.
+Since relational databases have no mechanical way to control ordering, this extension provides a new datatype that contains an element that can be implemented as a column to support ordering.
 
 [[ows_context_sql_resource]]
 ==== Datatype owc:SQLResource 
 This datatype extends _owc:Resource_ with the element(s) listed in <<sql_select_resource_extension_table>>.
 
-[[sql_select_resource_extension_table]]
+[#sql_select_resource_extension_table,reftext='{table-caption} {counter:table-num}']
 .Datatype owc:SQLSelectResource
 [cols=",,,",options="header",]
 |=======================================================================
@@ -42,7 +42,7 @@ When the SQL Content Extension is in use, an _owc:Offering_ is constrained as pe
 The constraints are [underline]#underlined#.
 ====
 
-[[sql_offering_table]]
+[#sql_offering_table,reftext='{table-caption} {counter:table-num}']
 .Datatype owc:Offering for SQL Content Extension
 [cols=",,,",options="header",]
 |=======================================================================
@@ -60,7 +60,7 @@ When the SQL Content Extension is in use for an offering, _owc:Operation_ child 
 The constraints are [underline]#underlined#.
 ====
 
-[[sql_operation_table]]
+[#sql_operation_table,reftext='{table-caption} {counter:table-num}']
 .Datatype owc:Operation for SQL Content Extension
 [cols=",,,",options="header",]
 |=======================================================================
@@ -86,7 +86,7 @@ When the SQL Content Extension is in use for an _offering_ (for example, the cod
 For a pure SQL implementation, clients may use the `query` element directly.
 For a GeoPackage, the `from` may be more useful because it refers to a table name that can be looked up in _gpkg_contents_, allowing it to be used as a proper GeoPackage content type. 
 
-[[sql_content_table]]
+[#sql_content_table,reftext='{table-caption} {counter:table-num}']
 .Datatype owc:SQLContent
 [cols=",,,",options="header",]
 |=======================================================================
@@ -112,7 +112,7 @@ This OWS Context extension supports content stored in a GeoPackage. This can inc
 
 When the `code` of an owc:Offering is one of the codes listed in <<gpkg_offering_codes>>, the SQL Content Extension applies and the `code` for operations is `GPKG`. The `from` of the SQLContent corresponds to the name of the user-defined table in the GeoPackage. This allows clients to use `gpkg_contents` and other GeoPackage tables normally.
 
-[[gpkg_offering_codes]]
+[#gpkg_offering_codes,reftext='{table-caption} {counter:table-num}']
 .GeoPackage Offering Codes
 [cols=",",options="header",]
 |=======================================================================
